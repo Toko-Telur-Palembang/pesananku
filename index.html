@@ -3,267 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TelurSegar Palembang — Suplai Langsung dari Kandang</title>
+<title>TelurSegar Palembang — Pesan Telur Segar</title>
 <meta name="description" content="Pesan telur ayam segar langsung dari peternakan di Palembang. Grade S, M, L, XL. Antar ke lokasi Anda.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --green:       #1A6B3A;
-  --green-dark:  #124d2a;
-  --green-mid:   #3B6D11;
-  --green-light: #EAF3DE;
-  --green-pale:  #f2faf0;
-  --amber:       #BA7517;
-  --amber-light: #FAEEDA;
-  --blue:        #185FA5;
-  --blue-light:  #E6F1FB;
-  --red:         #A32D2D;
-  --red-light:   #FCEBEB;
-  --text:        #1a1a1a;
-  --text-mid:    #555;
-  --text-muted:  #888;
-  --border:      #e4e4e4;
-  --surface:     #f7f8f6;
-  --white:       #ffffff;
-  --radius:      12px;
-  --radius-sm:   8px;
-  --font-display: 'Sora', sans-serif;
-  --font-body:    'Plus Jakarta Sans', sans-serif;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); background: var(--surface); color: var(--text); font-size: 15px; line-height: 1.6; min-height: 100vh; }
-
-/* NAV */
-.nav { background: var(--green); position: sticky; top: 0; z-index: 100; }
-.nav-inner { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
-.nav-brand { display: flex; align-items: center; gap: 10px; }
-.nav-logo { width: 34px; height: 34px; background: rgba(255,255,255,.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-.nav-logo svg { width: 20px; height: 20px; }
-.nav-title { font-family: var(--font-display); font-size: 16px; color: #fff; letter-spacing: -.02em; }
-.nav-sub { font-size: 11px; color: rgba(255,255,255,.6); }
-.nav-tabs { display: flex; gap: 3px; }
-.nav-tab { font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 6px; border: none; cursor: pointer; transition: background .15s; font-family: var(--font-body); }
-.nav-tab.active { background: #fff; color: var(--green); }
-.nav-tab:not(.active) { background: rgba(255,255,255,.12); color: rgba(255,255,255,.85); }
-.nav-tab:not(.active):hover { background: rgba(255,255,255,.2); }
-.nav-badge { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; background: #ff4d4d; color: #fff; border-radius: 50%; font-size: 10px; font-weight: 600; margin-left: 4px; }
-
-/* LAYOUT */
-.page { display: none; max-width: 960px; margin: 0 auto; padding: 1.5rem 1.25rem; }
-.page.active { display: block; }
-
+:root{--green:#1A6B3A;--green-dark:#124d2a;--green-mid:#3B6D11;--green-light:#EAF3DE;--green-pale:#f2faf0;--amber:#BA7517;--amber-light:#FAEEDA;--blue:#185FA5;--blue-light:#E6F1FB;--red:#A32D2D;--red-light:#FCEBEB;--text:#1a1a1a;--text-mid:#555;--text-muted:#888;--border:#e4e4e4;--surface:#f7f8f6;--white:#ffffff;--radius:12px;--radius-sm:8px;--font-display:'Sora',sans-serif;--font-body:'Plus Jakarta Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--surface);color:var(--text);font-size:15px;line-height:1.6;min-height:100vh;}
+.nav{background:var(--green);position:sticky;top:0;z-index:100;}
+.nav-inner{max-width:960px;margin:0 auto;padding:0 1.25rem;display:flex;align-items:center;justify-content:space-between;height:56px;}
+.nav-brand{display:flex;align-items:center;gap:10px;}
+.nav-logo{width:34px;height:34px;background:rgba(255,255,255,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.nav-title{font-family:var(--font-display);font-size:16px;color:#fff;letter-spacing:-.02em;}
+.nav-sub{font-size:11px;color:rgba(255,255,255,.6);}
+.nav-right{display:flex;align-items:center;gap:8px;}
+.nav-tabs{display:flex;gap:3px;}
+.nav-tab{font-size:12px;font-weight:500;padding:6px 14px;border-radius:6px;border:none;cursor:pointer;transition:background .15s;font-family:var(--font-body);}
+.nav-tab.active{background:#fff;color:var(--green);}
+.nav-tab:not(.active){background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);}
+.nav-tab:not(.active):hover{background:rgba(255,255,255,.2);}
+.nav-badge{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#ff4d4d;color:#fff;border-radius:50%;font-size:10px;font-weight:600;margin-left:4px;}
+.btn-logout{font-size:12px;font-weight:500;padding:5px 12px;border-radius:6px;border:1px solid rgba(255,255,255,.3);background:transparent;color:rgba(255,255,255,.85);cursor:pointer;font-family:var(--font-body);}
+.btn-admin-login{font-size:12px;font-weight:500;padding:5px 12px;border-radius:6px;border:none;background:rgba(255,255,255,.15);color:#fff;cursor:pointer;font-family:var(--font-body);}
+.btn-admin-login:hover{background:rgba(255,255,255,.25);}
+.page{display:none;max-width:960px;margin:0 auto;padding:1.5rem 1.25rem;}
+.page.active{display:block;animation:fadeIn .2s ease;}
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:flex;align-items:center;justify-content:center;}
+.modal-box{background:var(--white);border-radius:16px;padding:2rem;width:100%;max-width:380px;margin:1rem;box-shadow:0 20px 60px rgba(0,0,0,.2);}
+.modal-logo{width:48px;height:48px;background:var(--green);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;}
+.modal-title{font-family:var(--font-display);font-size:18px;text-align:center;margin-bottom:4px;}
+.modal-sub{font-size:13px;color:var(--text-muted);text-align:center;margin-bottom:1.5rem;}
+.modal-error{background:var(--red-light);border:1px solid #f0b0b0;border-radius:8px;padding:.75rem 1rem;font-size:13px;color:var(--red);margin-bottom:1rem;display:none;}
+.modal-fg{margin-bottom:1rem;}
+.modal-fg label{font-size:11px;font-weight:600;color:var(--text-mid);text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:5px;}
+.modal-fg input{width:100%;font-family:var(--font-body);font-size:14px;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);outline:none;transition:border-color .15s;}
+.modal-fg input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(26,107,58,.08);}
 /* HERO */
-.hero { background: var(--green); border-radius: var(--radius); padding: 1.75rem 2rem; margin-bottom: 1.5rem; position: relative; overflow: hidden; }
-.hero::after { content: ''; position: absolute; right: -40px; top: -40px; width: 200px; height: 200px; background: rgba(255,255,255,.04); border-radius: 50%; }
-.hero h1 { font-family: var(--font-display); font-size: 22px; color: #fff; margin-bottom: 6px; letter-spacing: -.02em; }
-.hero p { font-size: 13px; color: rgba(255,255,255,.7); max-width: 400px; }
-.hero-badges { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
-.hero-badge { font-size: 11px; background: rgba(255,255,255,.15); color: rgba(255,255,255,.9); padding: 4px 10px; border-radius: 20px; }
-
-/* PRODUCT GRID */
-.prod-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
-.prod-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 1rem; cursor: pointer; transition: border-color .15s, transform .1s; }
-.prod-card:hover { border-color: var(--green); transform: translateY(-1px); }
-.prod-card.selected { border: 2px solid var(--green); background: var(--green-light); }
-.prod-card.selected .prod-price { color: var(--green-dark); }
-.grade-pill { display: inline-block; font-size: 10px; font-weight: 600; color: var(--green-mid); background: var(--green-light); padding: 2px 8px; border-radius: 20px; margin-bottom: 8px; letter-spacing: .03em; }
-.prod-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
-.prod-size { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; }
-.prod-price { font-size: 16px; font-weight: 600; color: var(--green); }
-.prod-unit { font-size: 10px; color: var(--text-muted); }
-.qty-ctrl { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
-.qty-btn { width: 28px; height: 28px; border-radius: 6px; border: 1px solid var(--border); background: var(--white); cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; color: var(--text); font-family: var(--font-body); transition: background .1s; }
-.qty-btn:hover { background: var(--surface); }
-.qty-num { font-size: 13px; font-weight: 600; min-width: 32px; text-align: center; }
-
-/* SECTION LABEL */
-.sl { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
-
-/* CARDS */
-.card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; }
-.card-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
-
-/* FORM */
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
-.form-grid.full { grid-template-columns: 1fr; }
-.form-group { display: flex; flex-direction: column; gap: 5px; }
-.form-group label { font-size: 11px; font-weight: 600; color: var(--text-mid); text-transform: uppercase; letter-spacing: .04em; }
-.form-group input, .form-group select, .form-group textarea { font-family: var(--font-body); font-size: 14px; padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--white); color: var(--text); transition: border-color .15s; outline: none; }
-.form-group input:focus, .form-group select:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(26,107,58,.08); }
-
-/* CART */
-.cart-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
-.cart-row:last-child { border-bottom: none; }
-.cart-label { color: var(--text-mid); }
-.cart-val { font-weight: 600; }
-.total-box { background: var(--green-light); border-radius: var(--radius-sm); padding: 14px 1.25rem; display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-.total-label { font-size: 14px; font-weight: 600; color: var(--green-mid); }
-.total-val { font-size: 20px; font-weight: 700; color: var(--green-dark); font-family: var(--font-display); }
-
-/* BUTTONS */
-.btn-primary { width: 100%; padding: 13px; background: var(--green); color: #fff; border: none; border-radius: var(--radius-sm); font-size: 15px; font-weight: 600; cursor: pointer; font-family: var(--font-body); transition: background .15s, transform .1s; }
-.btn-primary:hover { background: var(--green-dark); }
-.btn-primary:active { transform: scale(.99); }
-.btn-sm { font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--white); cursor: pointer; color: var(--text-mid); font-family: var(--font-body); transition: background .1s; }
-.btn-sm:hover { background: var(--surface); }
-.btn-sm.g { border-color: #b7dfa0; color: var(--green-mid); background: var(--green-light); }
-.btn-sm.g:hover { background: #d3edc2; }
-.btn-sm.b { border-color: #a8c8ef; color: var(--blue); background: var(--blue-light); }
-.btn-sm.r { border-color: #f0b0b0; color: var(--red); background: var(--red-light); }
-.btn-wa { font-size: 11px; font-weight: 600; padding: 4px 10px; background: #25D366; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-family: var(--font-body); }
-
-/* METRICS */
-.metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 1.25rem; }
-.metric { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; }
-.metric-label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 4px; }
-.metric-val { font-size: 22px; font-weight: 700; color: var(--text); font-family: var(--font-display); }
-.metric-val.green { color: var(--green); }
-.metric-val.amber { color: var(--amber); }
-.metric-val.blue { color: var(--blue); }
-
-/* BADGES */
-.badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px; letter-spacing: .02em; }
-.badge-pending { background: var(--amber-light); color: var(--amber); }
-.badge-confirmed { background: var(--blue-light); color: var(--blue); }
-.badge-done { background: var(--green-light); color: var(--green-mid); }
-.badge-cancel { background: var(--red-light); color: var(--red); }
-.badge-retail { background: var(--green-light); color: var(--green-mid); }
-.badge-bisnis { background: var(--blue-light); color: var(--blue); }
-
-/* TABS / PILLS */
-.pills { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1rem; }
-.pill { font-size: 12px; font-weight: 500; padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border); background: var(--white); cursor: pointer; color: var(--text-mid); font-family: var(--font-body); transition: all .15s; }
-.pill.active { background: var(--green); color: #fff; border-color: var(--green); }
-.pill:hover:not(.active) { border-color: var(--green); color: var(--green); }
-
-/* TABLE */
-.table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-thead { background: var(--surface); }
-th { text-align: left; padding: 10px 12px; font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px solid var(--border); white-space: nowrap; }
-td { padding: 11px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
-tr:last-child td { border-bottom: none; }
-tr:hover td { background: var(--green-pale); }
-
-/* SEARCH */
-.search-row { display: flex; gap: 8px; margin-bottom: 1rem; }
-.search-row input { flex: 1; font-family: var(--font-body); font-size: 13px; padding: 9px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--white); color: var(--text); outline: none; }
-.search-row input:focus { border-color: var(--green); }
-.search-row select { font-family: var(--font-body); font-size: 13px; padding: 9px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--white); color: var(--text); outline: none; width: 150px; }
-
-/* NOTIF */
-.notif { background: var(--amber-light); border: 1px solid #f5d48a; border-radius: var(--radius-sm); padding: 12px 14px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; gap: 10px; animation: slideIn .2s ease; }
-.notif-text { font-size: 13px; color: #6b4000; }
-.notif-actions { display: flex; gap: 6px; flex-shrink: 0; }
-
-/* SUCCESS */
-.success-box { background: var(--green-light); border: 1px solid #b7dfa0; border-radius: var(--radius); padding: 2rem; text-align: center; margin-bottom: 1rem; }
-.success-icon { width: 56px; height: 56px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
-.success-title { font-family: var(--font-display); font-size: 18px; color: var(--green-dark); margin-bottom: 6px; }
-.success-sub { font-size: 13px; color: var(--green-mid); }
-
-/* DB CARDS */
-.db-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 8px; transition: border-color .15s; }
-.db-card:hover { border-color: var(--green); }
-.db-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
-.db-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
-.db-meta { font-size: 12px; color: var(--text-muted); }
-.db-stats { display: flex; gap: 18px; font-size: 12px; color: var(--text-muted); flex-wrap: wrap; }
-.db-stats strong { font-weight: 600; color: var(--text); }
-.top-label { font-size: 10px; font-weight: 700; color: var(--amber); background: var(--amber-light); padding: 2px 7px; border-radius: 4px; margin-right: 6px; }
-
-/* TOAST */
-.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--text); color: #fff; padding: 10px 20px; border-radius: 20px; font-size: 13px; font-weight: 500; z-index: 999; opacity: 0; transition: opacity .2s; pointer-events: none; }
-.toast.show { opacity: 1; }
-
-/* CHART */
-.chart-wrap { position: relative; width: 100%; height: 240px; margin-top: 8px; }
-
-/* EMPTY */
-.empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-muted); font-size: 14px; }
-.empty-state .emoji { font-size: 32px; margin-bottom: 8px; }
-
-/* REPORT HEADER */
-.report-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-
-/* INFO STRIP */
-.info-strip { background: var(--green-pale); border: 1px solid #c8e6b8; border-radius: var(--radius-sm); padding: 10px 14px; font-size: 12px; color: var(--green-mid); margin-bottom: 1rem; }
-
-/* DIVIDER */
-.divider { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
-
-/* FOOTER */
-.footer { background: var(--green-dark); color: rgba(255,255,255,.6); text-align: center; padding: 1.5rem; font-size: 12px; margin-top: 2rem; }
-.footer strong { color: rgba(255,255,255,.9); }
-
-/* ANIMATIONS */
-@keyframes slideIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
-@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
-.page.active { animation: fadeIn .2s ease; }
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  .metric-grid { grid-template-columns: 1fr 1fr; }
-  .form-grid { grid-template-columns: 1fr; }
-  .prod-grid { grid-template-columns: 1fr 1fr; }
-  .nav-title { font-size: 14px; }
-  .nav-sub { display: none; }
-  .hero h1 { font-size: 18px; }
-}
+.hero{background:var(--green);border-radius:var(--radius);padding:1.75rem 2rem;margin-bottom:1.5rem;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;right:-40px;top:-40px;width:200px;height:200px;background:rgba(255,255,255,.04);border-radius:50%;}
+.hero h1{font-family:var(--font-display);font-size:22px;color:#fff;margin-bottom:6px;letter-spacing:-.02em;}
+.hero p{font-size:13px;color:rgba(255,255,255,.7);max-width:400px;}
+.hero-badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;}
+.hero-badge{font-size:11px;background:rgba(255,255,255,.15);color:rgba(255,255,255,.9);padding:4px 10px;border-radius:20px;}
+/* PRODUCT */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:1.5rem;}
+.prod-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:1rem;cursor:pointer;transition:border-color .15s,transform .1s;}
+.prod-card:hover{border-color:var(--green);transform:translateY(-1px);}
+.prod-card.selected{border:2px solid var(--green);background:var(--green-light);}
+.grade-pill{display:inline-block;font-size:10px;font-weight:600;color:var(--green-mid);background:var(--green-light);padding:2px 8px;border-radius:20px;margin-bottom:8px;letter-spacing:.03em;}
+.prod-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.prod-size{font-size:11px;color:var(--text-muted);margin-bottom:8px;}
+.prod-price{font-size:16px;font-weight:600;color:var(--green);}
+.prod-unit{font-size:10px;color:var(--text-muted);}
+.qty-ctrl{display:flex;align-items:center;gap:8px;margin-top:10px;}
+.qty-btn{width:28px;height:28px;border-radius:6px;border:1px solid var(--border);background:var(--white);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;color:var(--text);transition:background .1s;}
+.qty-btn:hover{background:var(--surface);}
+.qty-num{font-size:13px;font-weight:600;min-width:32px;text-align:center;}
+/* MISC */
+.sl{font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem;}
+.card-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:12px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.form-grid.full{grid-template-columns:1fr;}
+.form-group{display:flex;flex-direction:column;gap:5px;}
+.form-group label{font-size:11px;font-weight:600;color:var(--text-mid);text-transform:uppercase;letter-spacing:.04em;}
+.form-group input,.form-group select{font-family:var(--font-body);font-size:14px;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--white);color:var(--text);transition:border-color .15s;outline:none;}
+.form-group input:focus,.form-group select:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(26,107,58,.08);}
+.cart-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);font-size:14px;}
+.cart-row:last-child{border-bottom:none;}
+.cart-label{color:var(--text-mid);}
+.cart-val{font-weight:600;}
+.total-box{background:var(--green-light);border-radius:var(--radius-sm);padding:14px 1.25rem;display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;}
+.total-label{font-size:14px;font-weight:600;color:var(--green-mid);}
+.total-val{font-size:20px;font-weight:700;color:var(--green-dark);font-family:var(--font-display);}
+.btn-primary{width:100%;padding:13px;background:var(--green);color:#fff;border:none;border-radius:var(--radius-sm);font-size:15px;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:background .15s;}
+.btn-primary:hover{background:var(--green-dark);}
+.btn-sm{font-size:12px;font-weight:500;padding:5px 12px;border-radius:6px;border:1px solid var(--border);background:var(--white);cursor:pointer;color:var(--text-mid);font-family:var(--font-body);}
+.btn-sm.g{border-color:#b7dfa0;color:var(--green-mid);background:var(--green-light);}
+.btn-sm.b{border-color:#a8c8ef;color:var(--blue);background:var(--blue-light);}
+.btn-sm.r{border-color:#f0b0b0;color:var(--red);background:var(--red-light);}
+.btn-wa{font-size:11px;font-weight:600;padding:4px 10px;background:#25D366;color:#fff;border:none;border-radius:5px;cursor:pointer;font-family:var(--font-body);}
+.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.25rem;}
+.metric{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem;}
+.metric-label{font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;}
+.metric-val{font-size:22px;font-weight:700;color:var(--text);font-family:var(--font-display);}
+.metric-val.green{color:var(--green);}
+.metric-val.amber{color:var(--amber);}
+.metric-val.blue{color:var(--blue);}
+.badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;letter-spacing:.02em;}
+.badge-pending{background:var(--amber-light);color:var(--amber);}
+.badge-confirmed{background:var(--blue-light);color:var(--blue);}
+.badge-done{background:var(--green-light);color:var(--green-mid);}
+.badge-cancel{background:var(--red-light);color:var(--red);}
+.badge-retail{background:var(--green-light);color:var(--green-mid);}
+.badge-bisnis{background:var(--blue-light);color:var(--blue);}
+.pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem;}
+.pill{font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:var(--white);cursor:pointer;color:var(--text-mid);font-family:var(--font-body);transition:all .15s;}
+.pill.active{background:var(--green);color:#fff;border-color:var(--green);}
+.table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead{background:var(--surface);}
+th{text-align:left;padding:10px 12px;font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--border);white-space:nowrap;}
+td{padding:11px 12px;border-bottom:1px solid var(--border);vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:var(--green-pale);}
+.search-row{display:flex;gap:8px;margin-bottom:1rem;}
+.search-row input{flex:1;font-family:var(--font-body);font-size:13px;padding:9px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--white);color:var(--text);outline:none;}
+.search-row input:focus{border-color:var(--green);}
+.search-row select{font-family:var(--font-body);font-size:13px;padding:9px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--white);color:var(--text);outline:none;width:150px;}
+.notif{background:var(--amber-light);border:1px solid #f5d48a;border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.notif-text{font-size:13px;color:#6b4000;}
+.success-box{background:var(--green-light);border:1px solid #b7dfa0;border-radius:var(--radius);padding:2rem;text-align:center;margin-bottom:1rem;}
+.success-icon{width:56px;height:56px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
+.success-title{font-family:var(--font-display);font-size:18px;color:var(--green-dark);margin-bottom:6px;}
+.success-sub{font-size:13px;color:var(--green-mid);}
+.db-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:8px;transition:border-color .15s;}
+.db-card:hover{border-color:var(--green);}
+.db-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;}
+.db-name{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px;}
+.db-meta{font-size:12px;color:var(--text-muted);}
+.db-stats{display:flex;gap:18px;font-size:12px;color:var(--text-muted);flex-wrap:wrap;}
+.db-stats strong{font-weight:600;color:var(--text);}
+.top-label{font-size:10px;font-weight:700;color:var(--amber);background:var(--amber-light);padding:2px 7px;border-radius:4px;margin-right:6px;}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--text);color:#fff;padding:10px 20px;border-radius:20px;font-size:13px;font-weight:500;z-index:999;opacity:0;transition:opacity .2s;pointer-events:none;}
+.toast.show{opacity:1;}
+.chart-wrap{position:relative;width:100%;height:240px;margin-top:8px;}
+.empty-state{text-align:center;padding:3rem 1rem;color:var(--text-muted);font-size:14px;}
+.report-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;}
+.footer{background:var(--green-dark);color:rgba(255,255,255,.6);text-align:center;padding:1.5rem;font-size:12px;margin-top:2rem;}
+.footer strong{color:rgba(255,255,255,.9);}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@media(max-width:600px){.metric-grid{grid-template-columns:1fr 1fr;}.form-grid{grid-template-columns:1fr;}.prod-grid{grid-template-columns:1fr 1fr;}.nav-sub{display:none;}.hero h1{font-size:18px;}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
     <div class="nav-brand">
       <div class="nav-logo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
-          <ellipse cx="12" cy="12" rx="9" ry="11"/>
-          <path d="M8 15c1 2 6 2 8 0"/>
-        </svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="12" rx="9" ry="11"/><path d="M8 15c1 2 6 2 8 0"/></svg>
       </div>
-      <div>
-        <div class="nav-title">TelurSegar</div>
-        <div class="nav-sub">Palembang</div>
-      </div>
+      <div><div class="nav-title">TelurSegar</div><div class="nav-sub">Palembang</div></div>
     </div>
-    <div class="nav-tabs">
-      <button class="nav-tab active" onclick="showPage('order')">Pesan</button>
-      <button class="nav-tab" onclick="showPage('admin')">Admin <span class="nav-badge" id="pending-badge" style="display:none">0</span></button>
-      <button class="nav-tab" onclick="showPage('database')">Pelanggan</button>
-      <button class="nav-tab" onclick="showPage('laporan')">Laporan</button>
+    <div class="nav-right">
+      <div id="admin-tabs" style="display:none" class="nav-tabs">
+        <button class="nav-tab" onclick="showPage('admin')">Admin <span class="nav-badge" id="pending-badge" style="display:none">0</span></button>
+        <button class="nav-tab" onclick="showPage('database')">Pelanggan</button>
+        <button class="nav-tab" onclick="showPage('laporan')">Laporan</button>
+      </div>
+      <button class="btn-admin-login" id="btn-login-nav" onclick="openLogin()">🔐 Admin</button>
+      <button class="btn-logout" id="btn-logout-nav" style="display:none" onclick="logout()">Keluar Admin</button>
     </div>
   </div>
 </nav>
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
-<!-- ══════════════════ PAGE: ORDER ══════════════════ -->
+<!-- MODAL LOGIN -->
+<div class="modal-overlay" id="login-modal" style="display:none">
+  <div class="modal-box">
+    <div class="modal-logo">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    </div>
+    <div class="modal-title">Login Admin</div>
+    <div class="modal-sub">Hanya untuk pemilik & pengelola peternakan</div>
+    <div class="modal-error" id="login-error">Username atau password salah.</div>
+    <div class="modal-fg"><label>Username</label><input type="text" id="inp-user" placeholder="admin" autocomplete="username"></div>
+    <div class="modal-fg"><label>Password</label><input type="password" id="inp-pass" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"></div>
+    <button class="btn-primary" onclick="doLogin()" style="margin-top:.5rem">Masuk</button>
+    <button onclick="closeLogin()" style="width:100%;margin-top:.75rem;padding:10px;background:none;border:none;cursor:pointer;font-size:13px;color:var(--text-muted);font-family:var(--font-body);">Batal</button>
+  </div>
+</div>
+
+<!-- PAGE ORDER (PUBLIK) -->
 <div id="page-order" class="page active">
   <div class="hero">
     <h1>Pesan Telur Segar Hari Ini</h1>
     <p>Dipanen harian, dikirim pagi hari langsung ke lokasi Anda di Palembang</p>
     <div class="hero-badges">
-      <span class="hero-badge">Antar ke rumah</span>
+      <span class="hero-badge">Antar ke lokasi</span>
       <span class="hero-badge">COD & Transfer</span>
-      <span class="hero-badge">Min. 5 kg</span>
+      <span class="hero-badge">Min. 1 kg</span>
       <span class="hero-badge">Grade S — XL</span>
     </div>
   </div>
-
   <div class="sl">Pilih produk & tentukan jumlah</div>
   <div class="prod-grid" id="prod-grid"></div>
-
   <div id="order-form" style="display:none">
     <div class="sl">Ringkasan pesanan</div>
     <div class="card" id="cart-summary"></div>
     <div class="total-box" id="total-display"></div>
-
     <div class="sl">Data pemesan</div>
     <div class="card">
       <div class="form-grid">
@@ -274,46 +207,20 @@ tr:hover td { background: var(--green-pale); }
         <div class="form-group"><label>Alamat pengiriman *</label><input type="text" id="f-alamat" placeholder="Alamat lengkap, patokan jelas"></div>
       </div>
       <div class="form-grid">
-        <div class="form-group">
-          <label>Tipe pembeli</label>
-          <select id="f-tipe">
-            <option value="retail">Retail / Umum</option>
-            <option value="bisnis">Bisnis (Katering / Hotel / Resto)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Jadwal antar</label>
-          <select id="f-jadwal">
-            <option>Besok pagi (05.00–09.00)</option>
-            <option>Lusa pagi</option>
-            <option>Sesuai kesepakatan</option>
-          </select>
-        </div>
+        <div class="form-group"><label>Tipe pembeli</label><select id="f-tipe"><option value="retail">Retail / Umum</option><option value="bisnis">Bisnis (Katering / Hotel / Resto)</option></select></div>
+        <div class="form-group"><label>Jadwal antar</label><select id="f-jadwal"><option>Besok pagi (05.00–09.00)</option><option>Lusa pagi</option><option>Sesuai kesepakatan</option></select></div>
       </div>
       <div class="form-grid">
-        <div class="form-group">
-          <label>Metode pembayaran</label>
-          <select id="f-bayar">
-            <option>COD (bayar saat barang tiba)</option>
-            <option>Transfer BCA</option>
-            <option>Transfer BRI</option>
-            <option>Transfer Mandiri</option>
-          </select>
-        </div>
+        <div class="form-group"><label>Metode pembayaran</label><select id="f-bayar"><option>COD (bayar saat barang tiba)</option><option>Transfer BCA</option><option>Transfer BRI</option><option>Transfer Mandiri</option></select></div>
         <div class="form-group"><label>Catatan tambahan</label><input type="text" id="f-catatan" placeholder="Titip ke satpam, dll (opsional)"></div>
       </div>
     </div>
     <button class="btn-primary" onclick="submitOrder()">Kirim Pesanan Sekarang</button>
     <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:10px">Tim kami akan konfirmasi via WhatsApp dalam 1 jam</p>
   </div>
-
   <div id="order-success" style="display:none">
     <div class="success-box">
-      <div class="success-icon">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-          <path d="M6 14l5 6L22 8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
+      <div class="success-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 14l5 6L22 8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="success-title">Pesanan Berhasil Dikirim!</div>
       <div class="success-sub" id="success-msg"></div>
     </div>
@@ -322,11 +229,10 @@ tr:hover td { background: var(--green-pale); }
   </div>
 </div>
 
-<!-- ══════════════════ PAGE: ADMIN ══════════════════ -->
+<!-- PAGE ADMIN -->
 <div id="page-admin" class="page">
   <div id="notif-area"></div>
   <div class="metric-grid" id="admin-metrics"></div>
-
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:8px;">
     <div class="pills" style="margin-bottom:0">
       <button class="pill active" onclick="filterOrders('semua',this)">Semua</button>
@@ -337,47 +243,33 @@ tr:hover td { background: var(--green-pale); }
     </div>
     <button class="btn-sm b" onclick="exportCSV()">⬇ Ekspor CSV</button>
   </div>
-
-  <div class="search-row">
-    <input type="text" placeholder="Cari nama atau nomor pesanan..." id="search-order" oninput="renderOrders()">
-  </div>
-
+  <div class="search-row"><input type="text" placeholder="Cari nama atau nomor pesanan..." id="search-order" oninput="renderOrders()"></div>
   <div class="table-wrap">
     <table>
       <thead><tr>
-        <th style="width:90px">No. Pesanan</th>
-        <th style="width:150px">Pelanggan</th>
-        <th style="width:70px">Tipe</th>
-        <th style="width:160px">Produk</th>
-        <th style="width:100px">Total</th>
-        <th style="width:90px">Bayar</th>
-        <th style="width:90px">Status</th>
-        <th style="width:150px">Aksi</th>
+        <th style="width:90px">No.</th><th style="width:150px">Pelanggan</th><th style="width:70px">Tipe</th>
+        <th style="width:150px">Produk</th><th style="width:100px">Total</th><th style="width:90px">Bayar</th>
+        <th style="width:90px">Status</th><th style="width:150px">Aksi</th>
       </tr></thead>
       <tbody id="order-tbody"></tbody>
     </table>
   </div>
 </div>
 
-<!-- ══════════════════ PAGE: DATABASE ══════════════════ -->
+<!-- PAGE DATABASE -->
 <div id="page-database" class="page">
   <div class="metric-grid" id="db-metrics"></div>
   <div class="search-row">
     <input type="text" placeholder="Cari nama, WhatsApp, atau alamat..." id="search-db" oninput="renderDB()">
-    <select id="filter-tipe" onchange="renderDB()">
-      <option value="">Semua tipe</option>
-      <option value="retail">Retail</option>
-      <option value="bisnis">Bisnis</option>
-    </select>
+    <select id="filter-tipe" onchange="renderDB()"><option value="">Semua tipe</option><option value="retail">Retail</option><option value="bisnis">Bisnis</option></select>
     <button class="btn-sm b" onclick="exportDBCSV()">⬇ Ekspor CSV</button>
   </div>
   <div id="db-list"></div>
 </div>
 
-<!-- ══════════════════ PAGE: LAPORAN ══════════════════ -->
+<!-- PAGE LAPORAN -->
 <div id="page-laporan" class="page">
   <div class="metric-grid" id="lap-metrics"></div>
-
   <div class="report-header">
     <div class="pills" style="margin-bottom:0">
       <button class="pill active" onclick="showReport('omset',this)">Omset Bulanan</button>
@@ -386,377 +278,192 @@ tr:hover td { background: var(--green-pale); }
     </div>
     <button class="btn-sm b" onclick="exportLaporanCSV()">⬇ Ekspor</button>
   </div>
-
   <div class="card">
     <div id="report-title" style="font-size:13px;font-weight:600;color:var(--text-muted);margin-bottom:4px"></div>
-    <div class="chart-wrap">
-      <canvas id="lapChart" role="img" aria-label="Grafik laporan penjualan telur"></canvas>
-    </div>
+    <div class="chart-wrap"><canvas id="lapChart" role="img" aria-label="Grafik laporan penjualan"></canvas></div>
   </div>
-
   <div class="sl" style="margin-top:1rem">Transaksi selesai</div>
   <div class="table-wrap" id="lap-table"></div>
 </div>
 
-<!-- FOOTER -->
 <footer class="footer">
-  <strong>TelurSegar Palembang</strong> &mdash; Suplai langsung dari kandang<br>
+  <strong>TelurSegar Palembang</strong> — Suplai langsung dari kandang<br>
   3 Kandang &bull; 45.000 ekor &bull; ±36.000 butir/hari &bull; Palembang, Sumatera Selatan
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-// ─── DATA ───
-const STORE_KEY = 'telursegar_v3';
+// ══ GANTI USERNAME & PASSWORD DI SINI ══
+const ADMIN_USER = 'admin';
+const ADMIN_PASS = 'telursegar2026';
+// ════════════════════════════════════════
+
+const STORE_KEY = 'telursegar_v4';
+const SESSION_KEY = 'telursegar_session';
 const products = [
-  {id:'s',  grade:'Grade S',  name:'Telur Ayam Segar', size:'Kecil  < 55 gr',    price:25500},
-  {id:'m',  grade:'Grade M',  name:'Telur Ayam Segar', size:'Sedang 55–60 gr',   price:26500},
-  {id:'l',  grade:'Grade L',  name:'Telur Ayam Segar', size:'Besar  60–65 gr',   price:27500},
-  {id:'xl', grade:'Grade XL', name:'Telur Ayam Segar', size:'Jumbo  > 65 gr',    price:28500},
-  {id:'mix',grade:'Mix',      name:'Paket Campuran',   size:'Semua ukuran',       price:26000},
+  {id:'s',grade:'Grade S',name:'Telur Ayam Segar',size:'Kecil < 55 gr',price:25500},
+  {id:'m',grade:'Grade M',name:'Telur Ayam Segar',size:'Sedang 55–60 gr',price:26500},
+  {id:'l',grade:'Grade L',name:'Telur Ayam Segar',size:'Besar 60–65 gr',price:27500},
+  {id:'xl',grade:'Grade XL',name:'Telur Ayam Segar',size:'Jumbo > 65 gr',price:28500},
+  {id:'mix',grade:'Mix',name:'Paket Campuran',size:'Semua ukuran',price:26000},
 ];
 const seed = [
-  {id:'ORD-001',nama:'Ibu Sari Dewi',    wa:'081234567890',alamat:'Jl. Demang Lebar Daun No.12',tipe:'retail',produk:'Grade L 10 kg',   total:275000,  jadwal:'Besok pagi',bayar:'COD',            status:'done',     catatan:'',            tgl:'2026-05-01',bulan:'Mei 2026',grade:'l',  kg:10},
-  {id:'ORD-002',nama:'Katering Bundo',   wa:'082345678901',alamat:'Jl. Veteran No.45',          tipe:'bisnis',produk:'Grade M 50 kg',   total:1325000, jadwal:'Besok pagi',bayar:'Transfer BCA',   status:'confirmed',catatan:'Minta faktur',tgl:'2026-05-01',bulan:'Mei 2026',grade:'m',  kg:50},
-  {id:'ORD-003',nama:'Hotel Sriwijaya',  wa:'083456789012',alamat:'Jl. Sudirman No.8',          tipe:'bisnis',produk:'Mix 100 kg',      total:2600000, jadwal:'Lusa pagi',  bayar:'Transfer BRI',   status:'done',     catatan:'',            tgl:'2026-05-02',bulan:'Mei 2026',grade:'mix',kg:100},
-  {id:'ORD-004',nama:'Pak Budi',         wa:'084567890123',alamat:'Jl. Kol. H. Burlian No.7',   tipe:'retail',produk:'Grade S 5 kg',    total:127500,  jadwal:'Besok pagi',bayar:'COD',            status:'pending',  catatan:'Hub dulu',    tgl:'2026-05-02',bulan:'Mei 2026',grade:'s',  kg:5},
-  {id:'ORD-005',nama:'Resto Pempek Asli',wa:'085678901234',alamat:'Jl. Kapten A. Rivai No.5',   tipe:'bisnis',produk:'Grade L 80 kg',   total:2200000, jadwal:'Besok pagi',bayar:'Transfer BCA',   status:'done',     catatan:'',            tgl:'2026-04-28',bulan:'Apr 2026',grade:'l',  kg:80},
-  {id:'ORD-006',nama:'Ibu Ratna',        wa:'086789012345',alamat:'Jl. Angkatan 45 No.3',       tipe:'retail',produk:'Grade M 8 kg',    total:212000,  jadwal:'Lusa pagi',  bayar:'COD',            status:'done',     catatan:'',            tgl:'2026-04-25',bulan:'Apr 2026',grade:'m',  kg:8},
-  {id:'ORD-007',nama:'Catering Wulan',   wa:'087890123456',alamat:'Jl. Radial No.20',           tipe:'bisnis',produk:'Grade XL 30 kg',  total:855000,  jadwal:'Besok pagi',bayar:'Transfer BRI',   status:'pending',  catatan:'',            tgl:'2026-05-02',bulan:'Mei 2026',grade:'xl', kg:30},
+  {id:'ORD-001',nama:'Ibu Sari Dewi',wa:'081234567890',alamat:'Jl. Demang Lebar Daun No.12',tipe:'retail',produk:'Grade L 10 kg',total:275000,jadwal:'Besok pagi',bayar:'COD',status:'done',catatan:'',tgl:'2026-05-01',bulan:'Mei 2026',grade:'l',kg:10},
+  {id:'ORD-002',nama:'Katering Bundo',wa:'082345678901',alamat:'Jl. Veteran No.45',tipe:'bisnis',produk:'Grade M 50 kg',total:1325000,jadwal:'Besok pagi',bayar:'Transfer BCA',status:'confirmed',catatan:'Minta faktur',tgl:'2026-05-01',bulan:'Mei 2026',grade:'m',kg:50},
+  {id:'ORD-003',nama:'Hotel Sriwijaya',wa:'083456789012',alamat:'Jl. Sudirman No.8',tipe:'bisnis',produk:'Mix 100 kg',total:2600000,jadwal:'Lusa pagi',bayar:'Transfer BRI',status:'done',catatan:'',tgl:'2026-05-02',bulan:'Mei 2026',grade:'mix',kg:100},
+  {id:'ORD-004',nama:'Pak Budi',wa:'084567890123',alamat:'Jl. Kol. H. Burlian No.7',tipe:'retail',produk:'Grade S 5 kg',total:127500,jadwal:'Besok pagi',bayar:'COD',status:'pending',catatan:'Hub dulu',tgl:'2026-05-02',bulan:'Mei 2026',grade:'s',kg:5},
+  {id:'ORD-005',nama:'Resto Pempek Asli',wa:'085678901234',alamat:'Jl. Kapten A. Rivai No.5',tipe:'bisnis',produk:'Grade L 80 kg',total:2200000,jadwal:'Besok pagi',bayar:'Transfer BCA',status:'done',catatan:'',tgl:'2026-04-28',bulan:'Apr 2026',grade:'l',kg:80},
+  {id:'ORD-006',nama:'Ibu Ratna',wa:'086789012345',alamat:'Jl. Angkatan 45 No.3',tipe:'retail',produk:'Grade M 8 kg',total:212000,jadwal:'Lusa pagi',bayar:'COD',status:'done',catatan:'',tgl:'2026-04-25',bulan:'Apr 2026',grade:'m',kg:8},
+  {id:'ORD-007',nama:'Catering Wulan',wa:'087890123456',alamat:'Jl. Radial No.20',tipe:'bisnis',produk:'Grade XL 30 kg',total:855000,jadwal:'Besok pagi',bayar:'Transfer BRI',status:'pending',catatan:'',tgl:'2026-05-02',bulan:'Mei 2026',grade:'xl',kg:30},
 ];
+let orders=[],cart={},orderFilter='semua',orderCounter=8,lapChart=null,currentReport='omset',isAdmin=false;
 
-let orders = [];
-let cart = {};
-let orderFilter = 'semua';
-let orderCounter = 8;
-let lapChart = null;
-let currentReport = 'omset';
+function loadOrders(){try{const r=localStorage.getItem(STORE_KEY);orders=r?JSON.parse(r):seed;}catch(e){orders=seed;}orderCounter=orders.length+1;}
+function saveOrders(){try{localStorage.setItem(STORE_KEY,JSON.stringify(orders));}catch(e){}}
+function checkSession(){try{return sessionStorage.getItem(SESSION_KEY)==='ok';}catch(e){return false;}}
+function setSession(){try{sessionStorage.setItem(SESSION_KEY,'ok');}catch(e){}}
+function clearSession(){try{sessionStorage.removeItem(SESSION_KEY);}catch(e){}}
 
-// ─── STORAGE ───
-function loadOrders() {
-  try {
-    const raw = localStorage.getItem(STORE_KEY);
-    orders = raw ? JSON.parse(raw) : seed;
-  } catch(e) { orders = seed; }
-  orderCounter = orders.length + 1;
+function openLogin(){document.getElementById('login-modal').style.display='flex';document.getElementById('login-error').style.display='none';document.getElementById('inp-user').value='';document.getElementById('inp-pass').value='';setTimeout(()=>document.getElementById('inp-user').focus(),100);}
+function closeLogin(){document.getElementById('login-modal').style.display='none';}
+function doLogin(){
+  const u=document.getElementById('inp-user').value.trim();
+  const p=document.getElementById('inp-pass').value;
+  if(u===ADMIN_USER&&p===ADMIN_PASS){isAdmin=true;setSession();closeLogin();activateAdmin();toast('Login berhasil! Selamat datang, Admin 👋');}
+  else{document.getElementById('login-error').style.display='block';document.getElementById('inp-pass').value='';document.getElementById('inp-pass').focus();}
 }
-function saveOrders() {
-  try { localStorage.setItem(STORE_KEY, JSON.stringify(orders)); } catch(e) {}
-}
+function logout(){isAdmin=false;clearSession();deactivateAdmin();showPage('order');toast('Anda telah keluar dari panel admin');}
+function activateAdmin(){document.getElementById('admin-tabs').style.display='flex';document.getElementById('btn-login-nav').style.display='none';document.getElementById('btn-logout-nav').style.display='block';updatePendingBadge();}
+function deactivateAdmin(){document.getElementById('admin-tabs').style.display='none';document.getElementById('btn-login-nav').style.display='block';document.getElementById('btn-logout-nav').style.display='none';}
 
-// ─── UTILITIES ───
-const fmt  = n => 'Rp ' + Math.round(n).toLocaleString('id-ID');
-const fmtK = n => n >= 1000000 ? 'Rp ' + (n/1000000).toFixed(1) + ' jt' : fmt(n);
-let toastTimer = null;
-function toast(msg) {
-  const el = document.getElementById('toast');
-  el.textContent = msg; el.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => el.classList.remove('show'), 2800);
+function showPage(p){
+  if(['admin','database','laporan'].includes(p)&&!isAdmin){openLogin();return;}
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('#admin-tabs .nav-tab').forEach(x=>x.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  const tabMap={admin:0,database:1,laporan:2};
+  if(tabMap[p]!==undefined)document.querySelectorAll('#admin-tabs .nav-tab')[tabMap[p]].classList.add('active');
+  if(p==='admin'){renderAdminMetrics();renderOrders();renderNotifs();}
+  if(p==='database'){renderDBMetrics();renderDB();}
+  if(p==='laporan'){renderLapMetrics();buildReport(currentReport);}
 }
+function updatePendingBadge(){const n=orders.filter(o=>o.status==='pending').length;const el=document.getElementById('pending-badge');el.textContent=n;el.style.display=n?'inline-flex':'none';}
 
-// ─── NAVIGATION ───
-function showPage(p) {
-  document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(x => x.classList.remove('active'));
-  document.getElementById('page-' + p).classList.add('active');
-  const tabs = ['order','admin','database','laporan'];
-  document.querySelectorAll('.nav-tab')[tabs.indexOf(p)].classList.add('active');
-  if(p === 'admin')    { renderAdminMetrics(); renderOrders(); renderNotifs(); }
-  if(p === 'database') { renderDBMetrics(); renderDB(); }
-  if(p === 'laporan')  { renderLapMetrics(); buildReport(currentReport); }
-  updatePendingBadge();
-}
-function updatePendingBadge() {
-  const n = orders.filter(o => o.status === 'pending').length;
-  const el = document.getElementById('pending-badge');
-  el.textContent = n; el.style.display = n ? 'inline-flex' : 'none';
-}
+const fmt=n=>'Rp '+Math.round(n).toLocaleString('id-ID');
+const fmtK=n=>n>=1000000?'Rp '+(n/1000000).toFixed(1)+' jt':fmt(n);
+let toastTimer=null;
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2800);}
 
-// ─── ORDER PAGE ───
-function renderProducts() {
-  document.getElementById('prod-grid').innerHTML = products.map(p => `
-    <div class="prod-card ${cart[p.id] ? 'selected' : ''}" onclick="toggleProduct('${p.id}')">
+// ORDER PAGE - kelipatan 1 kg
+function renderProducts(){
+  document.getElementById('prod-grid').innerHTML=products.map(p=>`
+    <div class="prod-card ${cart[p.id]?'selected':''}" onclick="toggleProduct('${p.id}')">
       <span class="grade-pill">${p.grade}</span>
       <div class="prod-name">${p.name}</div>
       <div class="prod-size">${p.size}</div>
       <div class="prod-price">${fmt(p.price)}</div>
       <div class="prod-unit">per kg</div>
-      ${cart[p.id] ? `
-        <div class="qty-ctrl" onclick="event.stopPropagation()">
-          <button class="qty-btn" onclick="changeQty('${p.id}',-5)">−</button>
-          <span class="qty-num">${cart[p.id]} kg</span>
-          <button class="qty-btn" onclick="changeQty('${p.id}',5)">+</button>
-        </div>` : ''}
+      ${cart[p.id]?`<div class="qty-ctrl" onclick="event.stopPropagation()">
+        <button class="qty-btn" onclick="changeQty('${p.id}',-1)">−</button>
+        <span class="qty-num">${cart[p.id]} kg</span>
+        <button class="qty-btn" onclick="changeQty('${p.id}',1)">+</button>
+      </div>`:''}
     </div>`).join('');
   renderCartSummary();
 }
-function toggleProduct(id) {
-  if(cart[id]) delete cart[id]; else cart[id] = 10;
-  renderProducts();
+function toggleProduct(id){if(cart[id])delete cart[id];else cart[id]=1;renderProducts();}
+function changeQty(id,d){const v=(cart[id]||0)+d;if(v<1)delete cart[id];else cart[id]=v;renderProducts();}
+function renderCartSummary(){
+  const keys=Object.keys(cart);
+  document.getElementById('order-form').style.display=keys.length?'block':'none';
+  if(!keys.length)return;
+  let total=0,rows='';
+  keys.forEach(k=>{const p=products.find(x=>x.id===k);const sub=p.price*cart[k];total+=sub;rows+=`<div class="cart-row"><span class="cart-label">${p.grade} — ${cart[k]} kg</span><span class="cart-val">${fmt(sub)}</span></div>`;});
+  const totalKg=Object.values(cart).reduce((a,b)=>a+b,0);
+  rows+=`<div class="cart-row"><span class="cart-label" style="font-size:12px;color:var(--text-muted)">Ongkir ${totalKg>=50?'✓ GRATIS (≥ 50 kg)':'estimasi Rp 20.000 (< 50 kg)'}</span></div>`;
+  document.getElementById('cart-summary').innerHTML=rows;
+  document.getElementById('total-display').innerHTML=`<span class="total-label">Total Pembayaran</span><span class="total-val">${fmt(total)}</span>`;
 }
-function changeQty(id, d) {
-  cart[id] = Math.max(5, (cart[id] || 0) + d);
-  renderProducts();
-}
-function renderCartSummary() {
-  const keys = Object.keys(cart);
-  document.getElementById('order-form').style.display = keys.length ? 'block' : 'none';
-  if(!keys.length) return;
-  let total = 0, rows = '';
-  keys.forEach(k => {
-    const p = products.find(x => x.id === k);
-    const sub = p.price * cart[k]; total += sub;
-    rows += `<div class="cart-row"><span class="cart-label">${p.grade} — ${cart[k]} kg</span><span class="cart-val">${fmt(sub)}</span></div>`;
-  });
-  const totalKg = Object.values(cart).reduce((a,b) => a+b, 0);
-  rows += `<div class="cart-row"><span class="cart-label" style="font-size:12px;color:var(--text-muted)">Ongkir ${totalKg >= 50 ? '✓ GRATIS (≥ 50 kg)' : 'estimasi Rp 20.000 (< 50 kg)'}</span></div>`;
-  document.getElementById('cart-summary').innerHTML = rows;
-  document.getElementById('total-display').innerHTML =
-    `<span class="total-label">Total Pembayaran</span><span class="total-val">${fmt(total)}</span>`;
-}
-function submitOrder() {
-  const nama   = document.getElementById('f-nama').value.trim();
-  const wa     = document.getElementById('f-wa').value.trim();
-  const alamat = document.getElementById('f-alamat').value.trim();
-  if(!nama || !wa || !alamat) { alert('Lengkapi nama, nomor WhatsApp, dan alamat pengiriman.'); return; }
-  const tipe   = document.getElementById('f-tipe').value;
-  const jadwal = document.getElementById('f-jadwal').value;
-  const bayar  = document.getElementById('f-bayar').value;
-  const catatan= document.getElementById('f-catatan').value;
-  let total = 0, prodParts = [], grade = 'mix', kg = 0;
-  Object.keys(cart).forEach(k => {
-    const p = products.find(x => x.id === k);
-    total += p.price * cart[k];
-    prodParts.push(p.grade + ' ' + cart[k] + ' kg');
-    grade = k; kg += cart[k];
-  });
-  const now = new Date();
-  const tgl   = now.toISOString().split('T')[0];
-  const bulan = now.toLocaleDateString('id-ID', {month:'short', year:'numeric'});
-  const id    = 'ORD-' + String(orderCounter++).padStart(3,'0');
-  orders.unshift({id, nama, wa, alamat, tipe, produk: prodParts.join(', '), total, jadwal, bayar, status:'pending', catatan, tgl, bulan, grade, kg});
-  saveOrders(); updatePendingBadge();
-  document.getElementById('order-form').style.display = 'none';
-  document.getElementById('order-success').style.display = 'block';
-  document.getElementById('success-msg').textContent = 'Tim kami akan menghubungi ' + wa + ' untuk konfirmasi jadwal pengiriman.';
-  document.getElementById('order-receipt').innerHTML = `
-    <div class="card-title">Bukti Pesanan</div>
+function submitOrder(){
+  const nama=document.getElementById('f-nama').value.trim();
+  const wa=document.getElementById('f-wa').value.trim();
+  const alamat=document.getElementById('f-alamat').value.trim();
+  if(!nama||!wa||!alamat){alert('Lengkapi nama, nomor WhatsApp, dan alamat pengiriman.');return;}
+  const tipe=document.getElementById('f-tipe').value;
+  const jadwal=document.getElementById('f-jadwal').value;
+  const bayar=document.getElementById('f-bayar').value;
+  const catatan=document.getElementById('f-catatan').value;
+  let total=0,prodParts=[],grade='mix',kg=0;
+  Object.keys(cart).forEach(k=>{const p=products.find(x=>x.id===k);total+=p.price*cart[k];prodParts.push(p.grade+' '+cart[k]+' kg');grade=k;kg+=cart[k];});
+  const now=new Date();
+  const tgl=now.toISOString().split('T')[0];
+  const bulan=now.toLocaleDateString('id-ID',{month:'short',year:'numeric'});
+  const id='ORD-'+String(orderCounter++).padStart(3,'0');
+  orders.unshift({id,nama,wa,alamat,tipe,produk:prodParts.join(', '),total,jadwal,bayar,status:'pending',catatan,tgl,bulan,grade,kg});
+  saveOrders();updatePendingBadge();
+  document.getElementById('order-form').style.display='none';
+  document.getElementById('order-success').style.display='block';
+  document.getElementById('success-msg').textContent='Tim kami akan menghubungi '+wa+' untuk konfirmasi jadwal pengiriman.';
+  document.getElementById('order-receipt').innerHTML=`<div class="card-title">Bukti Pesanan</div>
     <div class="cart-row"><span class="cart-label">No. Pesanan</span><span class="cart-val">${id}</span></div>
     <div class="cart-row"><span class="cart-label">Nama</span><span class="cart-val">${nama}</span></div>
     <div class="cart-row"><span class="cart-label">Produk</span><span>${prodParts.join(', ')}</span></div>
     <div class="cart-row"><span class="cart-label">Jadwal Antar</span><span>${jadwal}</span></div>
     <div class="cart-row"><span class="cart-label">Pembayaran</span><span>${bayar}</span></div>
     <div class="cart-row" style="border:none"><span class="cart-label" style="font-weight:600">Total</span><span class="total-val" style="font-size:18px">${fmt(total)}</span></div>`;
-  cart = {}; renderProducts();
+  cart=[];renderProducts();
 }
-function resetOrder() {
-  document.getElementById('order-success').style.display = 'none';
-  ['f-nama','f-wa','f-alamat','f-catatan'].forEach(id => document.getElementById(id).value = '');
-}
+function resetOrder(){document.getElementById('order-success').style.display='none';['f-nama','f-wa','f-alamat','f-catatan'].forEach(id=>document.getElementById(id).value='');}
 
-// ─── ADMIN PAGE ───
-function renderAdminMetrics() {
-  const total   = orders.length;
-  const pending = orders.filter(o => o.status === 'pending').length;
-  const omset   = orders.filter(o => o.status === 'done').reduce((a,o) => a+o.total, 0);
-  const bisnis  = orders.filter(o => o.tipe === 'bisnis').length;
-  document.getElementById('admin-metrics').innerHTML = `
-    <div class="metric"><div class="metric-label">Total pesanan</div><div class="metric-val">${total}</div></div>
-    <div class="metric"><div class="metric-label">Perlu konfirmasi</div><div class="metric-val amber">${pending}</div></div>
-    <div class="metric"><div class="metric-label">Omset selesai</div><div class="metric-val green" style="font-size:16px">${fmtK(omset)}</div></div>
-    <div class="metric"><div class="metric-label">Pembeli bisnis</div><div class="metric-val blue">${bisnis}</div></div>`;
-}
-function renderNotifs() {
-  const pending = orders.filter(o => o.status === 'pending');
-  document.getElementById('notif-area').innerHTML = pending.slice(0,3).map(o => `
-    <div class="notif">
-      <div class="notif-text">Pesanan baru <strong>${o.id}</strong> dari <strong>${o.nama}</strong> — ${fmt(o.total)}</div>
-      <div class="notif-actions">
-        <button class="btn-wa" onclick="hubungiWA('${o.wa}','${o.nama}','${o.id}')">WA</button>
-        <button class="btn-sm g" onclick="updateStatus('${o.id}','confirmed')">Konfirmasi</button>
-      </div>
-    </div>`).join('');
-}
-function filterOrders(f, el) {
-  orderFilter = f;
-  document.querySelectorAll('.pills .pill').forEach(x => x.classList.remove('active'));
-  el.classList.add('active');
-  renderOrders();
-}
-function renderOrders() {
-  const q = (document.getElementById('search-order')?.value || '').toLowerCase();
-  let list = orders.filter(o => {
-    if(orderFilter !== 'semua' && o.status !== orderFilter) return false;
-    if(q && !o.nama.toLowerCase().includes(q) && !o.id.toLowerCase().includes(q)) return false;
-    return true;
-  });
-  const sc = {pending:'badge-pending',confirmed:'badge-confirmed',done:'badge-done',cancel:'badge-cancel'};
-  const sl = {pending:'Menunggu',confirmed:'Dikonfirmasi',done:'Selesai',cancel:'Batal'};
-  document.getElementById('order-tbody').innerHTML = list.length ? list.map(o => `
-    <tr>
-      <td><div style="font-weight:600;font-size:12px">${o.id}</div><div style="font-size:11px;color:var(--text-muted)">${o.tgl}</div></td>
-      <td><div style="font-weight:600">${o.nama}</div><div style="font-size:11px;color:var(--text-muted)">${o.wa}</div></td>
-      <td><span class="badge badge-${o.tipe}">${o.tipe === 'bisnis' ? 'Bisnis' : 'Retail'}</span></td>
-      <td style="font-size:12px">${o.produk}</td>
-      <td style="font-weight:600">${fmt(o.total)}</td>
-      <td style="font-size:12px;color:var(--text-mid)">${o.bayar}</td>
-      <td><span class="badge ${sc[o.status]}">${sl[o.status]}</span></td>
-      <td>
-        <div style="display:flex;gap:4px;flex-wrap:wrap">
-          ${o.status === 'pending'    ? `<button class="btn-sm g" onclick="updateStatus('${o.id}','confirmed')">Konfirmasi</button>` : ''}
-          ${o.status === 'confirmed' ? `<button class="btn-sm g" onclick="updateStatus('${o.id}','done')">Selesai</button>` : ''}
-          ${o.status === 'pending'    ? `<button class="btn-sm r" onclick="updateStatus('${o.id}','cancel')">Batal</button>` : ''}
-          <button class="btn-wa" onclick="hubungiWA('${o.wa}','${o.nama}','${o.id}')">WA</button>
-        </div>
-      </td>
-    </tr>`).join('') :
-    `<tr><td colspan="8"><div class="empty-state"><div class="emoji">📭</div>Tidak ada pesanan ditemukan</div></td></tr>`;
-}
-function updateStatus(id, s) {
-  const o = orders.find(x => x.id === id);
-  if(o) { o.status = s; saveOrders(); renderAdminMetrics(); renderOrders(); renderNotifs(); updatePendingBadge(); toast('Status ' + id + ' diperbarui menjadi: ' + s); }
-}
-function hubungiWA(wa, nama, id) {
-  const msg = encodeURIComponent('Halo ' + nama + ', kami dari TelurSegar Palembang mengkonfirmasi pesanan ' + id + ' Anda. Terima kasih sudah memesan! Ada yang ingin ditanyakan?');
-  window.open('https://wa.me/62' + wa.replace(/^0/, '') + '?text=' + msg, '_blank');
-}
-function exportCSV() {
-  const q = (document.getElementById('search-order')?.value || '').toLowerCase();
-  let list = orders.filter(o => orderFilter === 'semua' || o.status === orderFilter);
-  if(q) list = list.filter(o => o.nama.toLowerCase().includes(q) || o.id.toLowerCase().includes(q));
-  const rows = [['No Pesanan','Tanggal','Nama','WhatsApp','Alamat','Tipe','Produk','Total (Rp)','Jadwal','Pembayaran','Status','Catatan']];
-  list.forEach(o => rows.push([o.id,o.tgl,o.nama,o.wa,o.alamat,o.tipe,o.produk,o.total,o.jadwal,o.bayar,o.status,o.catatan]));
-  dlCSV(rows, 'pesanan_telur_' + new Date().toISOString().split('T')[0] + '.csv');
-  toast('Data pesanan berhasil diekspor ke CSV');
-}
+// ADMIN
+function renderAdminMetrics(){const total=orders.length;const pending=orders.filter(o=>o.status==='pending').length;const omset=orders.filter(o=>o.status==='done').reduce((a,o)=>a+o.total,0);const bisnis=orders.filter(o=>o.tipe==='bisnis').length;document.getElementById('admin-metrics').innerHTML=`<div class="metric"><div class="metric-label">Total pesanan</div><div class="metric-val">${total}</div></div><div class="metric"><div class="metric-label">Perlu konfirmasi</div><div class="metric-val amber">${pending}</div></div><div class="metric"><div class="metric-label">Omset selesai</div><div class="metric-val green" style="font-size:16px">${fmtK(omset)}</div></div><div class="metric"><div class="metric-label">Pembeli bisnis</div><div class="metric-val blue">${bisnis}</div></div>`;}
+function renderNotifs(){const pending=orders.filter(o=>o.status==='pending');document.getElementById('notif-area').innerHTML=pending.slice(0,3).map(o=>`<div class="notif"><div class="notif-text">Pesanan baru <strong>${o.id}</strong> dari <strong>${o.nama}</strong> — ${fmt(o.total)}</div><div style="display:flex;gap:6px"><button class="btn-wa" onclick="hubungiWA('${o.wa}','${o.nama}','${o.id}')">WA</button><button class="btn-sm g" onclick="updateStatus('${o.id}','confirmed')">Konfirmasi</button></div></div>`).join('');}
+function filterOrders(f,el){orderFilter=f;document.querySelectorAll('#page-admin .pills .pill').forEach(x=>x.classList.remove('active'));el.classList.add('active');renderOrders();}
+function renderOrders(){
+  const q=(document.getElementById('search-order')?.value||'').toLowerCase();
+  let list=orders.filter(o=>{if(orderFilter!=='semua'&&o.status!==orderFilter)return false;if(q&&!o.nama.toLowerCase().includes(q)&&!o.id.toLowerCase().includes(q))return false;return true;});
+  const sc={pending:'badge-pending',confirmed:'badge-confirmed',done:'badge-done',cancel:'badge-cancel'};
+  const sl={pending:'Menunggu',confirmed:'Dikonfirmasi',done:'Selesai',cancel:'Batal'};
+  document.getElementById('order-tbody').innerHTML=list.length?list.map(o=>`<tr>
+    <td><div style="font-weight:600;font-size:12px">${o.id}</div><div style="font-size:11px;color:var(--text-muted)">${o.tgl}</div></td>
+    <td><div style="font-weight:600">${o.nama}</div><div style="font-size:11px;color:var(--text-muted)">${o.wa}</div></td>
+    <td><span class="badge badge-${o.tipe}">${o.tipe==='bisnis'?'Bisnis':'Retail'}</span></td>
+    <td style="font-size:12px">${o.produk}</td>
+    <td style="font-weight:600">${fmt(o.total)}</td>
+    <td style="font-size:12px;color:var(--text-mid)">${o.bayar}</td>
+    <td><span class="badge ${sc[o.status]}">${sl[o.status]}</span></td>
+    <td><div style="display:flex;gap:4px;flex-wrap:wrap">
+      ${o.status==='pending'?`<button class="btn-sm g" onclick="updateStatus('${o.id}','confirmed')">Konfirmasi</button>`:''}
+      ${o.status==='confirmed'?`<button class="btn-sm g" onclick="updateStatus('${o.id}','done')">Selesai</button>`:''}
+      ${o.status==='pending'?`<button class="btn-sm r" onclick="updateStatus('${o.id}','cancel')">Batal</button>`:''}
+      <button class="btn-wa" onclick="hubungiWA('${o.wa}','${o.nama}','${o.id}')">WA</button>
+    </div></td></tr>`).join(''):`<tr><td colspan="8"><div class="empty-state">Tidak ada pesanan ditemukan</div></td></tr>`;}
+function updateStatus(id,s){const o=orders.find(x=>x.id===id);if(o){o.status=s;saveOrders();renderAdminMetrics();renderOrders();renderNotifs();updatePendingBadge();toast('Status '+id+' diperbarui');}}
+function hubungiWA(wa,nama,id){const msg=encodeURIComponent('Halo '+nama+', kami dari TelurSegar Palembang mengkonfirmasi pesanan '+id+' Anda. Terima kasih sudah memesan!');window.open('https://wa.me/62'+wa.replace(/^0/,'')+`?text=${msg}`,'_blank');}
+function exportCSV(){const q=(document.getElementById('search-order')?.value||'').toLowerCase();let list=orders.filter(o=>orderFilter==='semua'||o.status===orderFilter);if(q)list=list.filter(o=>o.nama.toLowerCase().includes(q)||o.id.toLowerCase().includes(q));const rows=[['No Pesanan','Tanggal','Nama','WhatsApp','Alamat','Tipe','Produk','Total (Rp)','Jadwal','Pembayaran','Status','Catatan']];list.forEach(o=>rows.push([o.id,o.tgl,o.nama,o.wa,o.alamat,o.tipe,o.produk,o.total,o.jadwal,o.bayar,o.status,o.catatan]));dlCSV(rows,'pesanan_'+new Date().toISOString().split('T')[0]+'.csv');toast('Data pesanan diekspor');}
 
-// ─── DATABASE PAGE ───
-function buildDB() {
-  const db = {};
-  orders.forEach(o => {
-    if(!db[o.wa]) db[o.wa] = {...o, count:0, total:0, orders:[]};
-    db[o.wa].count++;
-    db[o.wa].total += o.total;
-    db[o.wa].orders.push(o);
-  });
-  return db;
-}
-function renderDBMetrics() {
-  const pl = Object.values(buildDB());
-  document.getElementById('db-metrics').innerHTML = `
-    <div class="metric"><div class="metric-label">Total pelanggan</div><div class="metric-val">${pl.length}</div></div>
-    <div class="metric"><div class="metric-label">Pelanggan bisnis</div><div class="metric-val blue">${pl.filter(p=>p.tipe==='bisnis').length}</div></div>
-    <div class="metric"><div class="metric-label">Pelanggan retail</div><div class="metric-val green">${pl.filter(p=>p.tipe==='retail').length}</div></div>
-    <div class="metric"><div class="metric-label">Total transaksi</div><div class="metric-val" style="font-size:15px">${fmtK(pl.reduce((a,p)=>a+p.total,0))}</div></div>`;
-}
-function renderDB() {
-  const q  = (document.getElementById('search-db')?.value || '').toLowerCase();
-  const ft = document.getElementById('filter-tipe')?.value || '';
-  let list = Object.values(buildDB()).sort((a,b) => b.total - a.total);
-  if(q)  list = list.filter(p => p.nama.toLowerCase().includes(q) || p.wa.includes(q) || p.alamat.toLowerCase().includes(q));
-  if(ft) list = list.filter(p => p.tipe === ft);
-  document.getElementById('db-list').innerHTML = list.length ? list.map((p,i) => `
-    <div class="db-card">
-      <div class="db-header">
-        <div>
-          <div class="db-name">
-            ${i < 3 ? `<span class="top-label">Top ${i+1}</span>` : ''}
-            ${p.nama} <span class="badge badge-${p.tipe}">${p.tipe==='bisnis'?'Bisnis':'Retail'}</span>
-          </div>
-          <div class="db-meta">${p.wa} &bull; ${p.alamat}</div>
-        </div>
-        <button class="btn-wa" onclick="hubungiWA('${p.wa}','${p.nama}','follow up')">Hubungi WA</button>
-      </div>
-      <div class="db-stats">
-        <div>Pesanan: <strong>${p.count}x</strong></div>
-        <div>Total nilai: <strong>${fmtK(p.total)}</strong></div>
-        <div>Favorit: <strong>${p.produk.split(',')[0]}</strong></div>
-        <div>Terdaftar: <strong>${p.tgl}</strong></div>
-      </div>
-    </div>`).join('') :
-    `<div class="empty-state"><div class="emoji">👥</div>Tidak ada pelanggan ditemukan</div>`;
-}
-function exportDBCSV() {
-  const rows = [['Nama','WhatsApp','Alamat','Tipe','Jumlah Pesanan','Total Transaksi (Rp)','Produk Favorit','Terdaftar Sejak']];
-  Object.values(buildDB()).forEach(p => rows.push([p.nama,p.wa,p.alamat,p.tipe,p.count,p.total,p.produk,p.tgl]));
-  dlCSV(rows, 'database_pelanggan_' + new Date().toISOString().split('T')[0] + '.csv');
-  toast('Database pelanggan berhasil diekspor');
-}
+// DATABASE
+function buildDB(){const db={};orders.forEach(o=>{if(!db[o.wa])db[o.wa]={...o,count:0,total:0};db[o.wa].count++;db[o.wa].total+=o.total;});return db;}
+function renderDBMetrics(){const pl=Object.values(buildDB());document.getElementById('db-metrics').innerHTML=`<div class="metric"><div class="metric-label">Total pelanggan</div><div class="metric-val">${pl.length}</div></div><div class="metric"><div class="metric-label">Pelanggan bisnis</div><div class="metric-val blue">${pl.filter(p=>p.tipe==='bisnis').length}</div></div><div class="metric"><div class="metric-label">Pelanggan retail</div><div class="metric-val green">${pl.filter(p=>p.tipe==='retail').length}</div></div><div class="metric"><div class="metric-label">Total transaksi</div><div class="metric-val" style="font-size:15px">${fmtK(pl.reduce((a,p)=>a+p.total,0))}</div></div>`;}
+function renderDB(){const q=(document.getElementById('search-db')?.value||'').toLowerCase();const ft=document.getElementById('filter-tipe')?.value||'';let list=Object.values(buildDB()).sort((a,b)=>b.total-a.total);if(q)list=list.filter(p=>p.nama.toLowerCase().includes(q)||p.wa.includes(q)||p.alamat.toLowerCase().includes(q));if(ft)list=list.filter(p=>p.tipe===ft);document.getElementById('db-list').innerHTML=list.length?list.map((p,i)=>`<div class="db-card"><div class="db-header"><div><div class="db-name">${i<3?`<span class="top-label">Top ${i+1}</span>`:''} ${p.nama} <span class="badge badge-${p.tipe}">${p.tipe==='bisnis'?'Bisnis':'Retail'}</span></div><div class="db-meta">${p.wa} &bull; ${p.alamat}</div></div><button class="btn-wa" onclick="hubungiWA('${p.wa}','${p.nama}','follow up')">Hubungi WA</button></div><div class="db-stats"><div>Pesanan: <strong>${p.count}x</strong></div><div>Total: <strong>${fmtK(p.total)}</strong></div><div>Favorit: <strong>${p.produk.split(',')[0]}</strong></div><div>Sejak: <strong>${p.tgl}</strong></div></div></div>`).join(''):`<div class="empty-state">Tidak ada pelanggan ditemukan</div>`;}
+function exportDBCSV(){const rows=[['Nama','WhatsApp','Alamat','Tipe','Jumlah Pesanan','Total (Rp)','Produk Favorit','Terdaftar']];Object.values(buildDB()).forEach(p=>rows.push([p.nama,p.wa,p.alamat,p.tipe,p.count,p.total,p.produk,p.tgl]));dlCSV(rows,'pelanggan_'+new Date().toISOString().split('T')[0]+'.csv');toast('Database pelanggan diekspor');}
 
-// ─── LAPORAN PAGE ───
-function renderLapMetrics() {
-  const done = orders.filter(o => o.status === 'done');
-  const omset = done.reduce((a,o) => a+o.total, 0);
-  const kg    = done.reduce((a,o) => a+(o.kg||0), 0);
-  const avg   = done.length ? Math.round(omset / done.length) : 0;
-  const bisnisPct = orders.length ? Math.round(orders.filter(o=>o.tipe==='bisnis').length / orders.length * 100) : 0;
-  document.getElementById('lap-metrics').innerHTML = `
-    <div class="metric"><div class="metric-label">Total omset</div><div class="metric-val green" style="font-size:16px">${fmtK(omset)}</div></div>
-    <div class="metric"><div class="metric-label">Volume terjual</div><div class="metric-val">${kg} kg</div></div>
-    <div class="metric"><div class="metric-label">Rata-rata order</div><div class="metric-val" style="font-size:15px">${fmtK(avg)}</div></div>
-    <div class="metric"><div class="metric-label">Porsi bisnis</div><div class="metric-val blue">${bisnisPct}%</div></div>`;
-}
-function showReport(type, el) {
-  currentReport = type;
-  document.querySelectorAll('#page-laporan .pills .pill').forEach(x => x.classList.remove('active'));
-  if(el) el.classList.add('active');
-  buildReport(type);
-}
-function buildReport(type) {
-  if(lapChart) { lapChart.destroy(); lapChart = null; }
-  const ctx = document.getElementById('lapChart');
-  const done = orders.filter(o => o.status === 'done');
+// LAPORAN
+function renderLapMetrics(){const done=orders.filter(o=>o.status==='done');const omset=done.reduce((a,o)=>a+o.total,0);const kg=done.reduce((a,o)=>a+(o.kg||0),0);const avg=done.length?Math.round(omset/done.length):0;const bp=orders.length?Math.round(orders.filter(o=>o.tipe==='bisnis').length/orders.length*100):0;document.getElementById('lap-metrics').innerHTML=`<div class="metric"><div class="metric-label">Total omset</div><div class="metric-val green" style="font-size:16px">${fmtK(omset)}</div></div><div class="metric"><div class="metric-label">Volume terjual</div><div class="metric-val">${kg} kg</div></div><div class="metric"><div class="metric-label">Rata-rata order</div><div class="metric-val" style="font-size:15px">${fmtK(avg)}</div></div><div class="metric"><div class="metric-label">Porsi bisnis</div><div class="metric-val blue">${bp}%</div></div>`;}
+function showReport(type,el){currentReport=type;document.querySelectorAll('#page-laporan .pills .pill').forEach(x=>x.classList.remove('active'));if(el)el.classList.add('active');buildReport(type);}
+function buildReport(type){if(lapChart){lapChart.destroy();lapChart=null;}const ctx=document.getElementById('lapChart');const done=orders.filter(o=>o.status==='done');
+  if(type==='omset'){const byB={};done.forEach(o=>{byB[o.bulan]=(byB[o.bulan]||0)+o.total;});const labels=Object.keys(byB);const data=labels.map(l=>Math.round(byB[l]/1000));document.getElementById('report-title').textContent='Omset per bulan (ribu rupiah)';lapChart=new Chart(ctx,{type:'bar',data:{labels,datasets:[{label:'Omset',data,backgroundColor:'#3B6D11',borderRadius:6,borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{ticks:{callback:v=>'Rp '+v+'rb'},grid:{color:'rgba(0,0,0,.05)'}}}}});}
+  else if(type==='produk'){const byG={};done.forEach(o=>{const g=(o.produk||'').split(' ')[0];byG[g]=(byG[g]||0)+(o.kg||0);});const labels=Object.keys(byG);const data=labels.map(l=>byG[l]);document.getElementById('report-title').textContent='Volume terjual per grade (kg)';lapChart=new Chart(ctx,{type:'bar',data:{labels,datasets:[{label:'Volume (kg)',data,backgroundColor:['#C0DD97','#639922','#3B6D11','#124d2a','#EF9F27'],borderRadius:6,borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{ticks:{callback:v=>v+' kg'},grid:{color:'rgba(0,0,0,.05)'}}}}});}
+  else{const retail=done.filter(o=>o.tipe==='retail').reduce((a,o)=>a+o.total,0);const bisnis=done.filter(o=>o.tipe==='bisnis').reduce((a,o)=>a+o.total,0);document.getElementById('report-title').textContent='Kontribusi omset: Retail vs Bisnis';lapChart=new Chart(ctx,{type:'doughnut',data:{labels:['Retail','Bisnis'],datasets:[{data:[retail,bisnis],backgroundColor:['#639922','#185FA5'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}}}});}
+  document.getElementById('lap-table').innerHTML=`<table><thead><tr><th>No.</th><th>Pelanggan</th><th>Produk</th><th>Total</th><th>Tipe</th><th>Tanggal</th></tr></thead><tbody>${done.slice(0,10).map(o=>`<tr><td style="font-size:11px;color:var(--text-muted)">${o.id}</td><td style="font-weight:600">${o.nama}</td><td style="font-size:12px">${o.produk}</td><td style="font-weight:600">${fmt(o.total)}</td><td><span class="badge badge-${o.tipe}">${o.tipe==='bisnis'?'Bisnis':'Retail'}</span></td><td style="font-size:12px;color:var(--text-muted)">${o.tgl}</td></tr>`).join('')}</tbody></table>`;}
+function exportLaporanCSV(){const done=orders.filter(o=>o.status==='done');const rows=[['No Pesanan','Nama','Tipe','Produk','Total (Rp)','Volume (kg)','Bulan','Tanggal']];done.forEach(o=>rows.push([o.id,o.nama,o.tipe,o.produk,o.total,o.kg||0,o.bulan,o.tgl]));dlCSV(rows,'laporan_'+new Date().toISOString().split('T')[0]+'.csv');toast('Laporan diekspor');}
 
-  if(type === 'omset') {
-    const byB = {}; done.forEach(o => { byB[o.bulan] = (byB[o.bulan]||0) + o.total; });
-    const labels = Object.keys(byB); const data = labels.map(l => Math.round(byB[l]/1000));
-    document.getElementById('report-title').textContent = 'Omset per bulan (dalam ribu rupiah)';
-    lapChart = new Chart(ctx, {type:'bar', data:{labels, datasets:[{label:'Omset (Rp ribu)', data, backgroundColor:'#3B6D11', borderRadius:6, borderWidth:0}]}, options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{ticks:{callback:v=>'Rp '+v+'rb'},grid:{color:'rgba(0,0,0,.05)'}}}}});
-  } else if(type === 'produk') {
-    const byG = {}; done.forEach(o => { const g = (o.produk||'').split(' ')[0]; byG[g] = (byG[g]||0) + (o.kg||0); });
-    const labels = Object.keys(byG); const data = labels.map(l => byG[l]);
-    document.getElementById('report-title').textContent = 'Volume terjual per grade (kg)';
-    lapChart = new Chart(ctx, {type:'bar', data:{labels, datasets:[{label:'Volume (kg)', data, backgroundColor:['#C0DD97','#639922','#3B6D11','#124d2a','#EF9F27'], borderRadius:6, borderWidth:0}]}, options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{ticks:{callback:v=>v+' kg'},grid:{color:'rgba(0,0,0,.05)'}}}}});
-  } else {
-    const retail = done.filter(o=>o.tipe==='retail').reduce((a,o)=>a+o.total,0);
-    const bisnis = done.filter(o=>o.tipe==='bisnis').reduce((a,o)=>a+o.total,0);
-    document.getElementById('report-title').textContent = 'Kontribusi omset: Retail vs Bisnis';
-    lapChart = new Chart(ctx, {type:'doughnut', data:{labels:['Retail','Bisnis'], datasets:[{data:[retail,bisnis], backgroundColor:['#639922','#185FA5'], borderWidth:0}]}, options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}}}});
-  }
+function dlCSV(rows,filename){const csv=rows.map(r=>r.map(c=>'"'+String(c||'').replace(/"/g,'""')+'"').join(',')).join('\n');const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;a.click();}
 
-  const done8 = done.slice(0,10);
-  document.getElementById('lap-table').innerHTML = `<table>
-    <thead><tr><th>No.</th><th>Pelanggan</th><th>Produk</th><th>Total</th><th>Tipe</th><th>Tanggal</th></tr></thead>
-    <tbody>${done8.map(o=>`<tr>
-      <td style="font-size:11px;color:var(--text-muted)">${o.id}</td>
-      <td style="font-weight:600">${o.nama}</td>
-      <td style="font-size:12px">${o.produk}</td>
-      <td style="font-weight:600">${fmt(o.total)}</td>
-      <td><span class="badge badge-${o.tipe}">${o.tipe==='bisnis'?'Bisnis':'Retail'}</span></td>
-      <td style="font-size:12px;color:var(--text-muted)">${o.tgl}</td>
-    </tr>`).join('')}</tbody></table>`;
-}
-function exportLaporanCSV() {
-  const done = orders.filter(o => o.status === 'done');
-  const rows = [['No Pesanan','Nama','Tipe','Produk','Total (Rp)','Volume (kg)','Bulan','Tanggal']];
-  done.forEach(o => rows.push([o.id,o.nama,o.tipe,o.produk,o.total,o.kg||0,o.bulan,o.tgl]));
-  dlCSV(rows, 'laporan_penjualan_' + new Date().toISOString().split('T')[0] + '.csv');
-  toast('Laporan berhasil diekspor');
-}
-
-// ─── CSV DOWNLOAD ───
-function dlCSV(rows, filename) {
-  const csv = rows.map(r => r.map(c => '"' + String(c||'').replace(/"/g,'""') + '"').join(',')).join('\n');
-  const blob = new Blob(['\uFEFF' + csv], {type:'text/csv;charset=utf-8'});
-  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename; a.click();
-}
-
-// ─── INIT ───
+// INIT
 loadOrders();
 renderProducts();
-updatePendingBadge();
+if(checkSession()){isAdmin=true;activateAdmin();}
 </script>
 </body>
 </html>
-HTMLEOF
